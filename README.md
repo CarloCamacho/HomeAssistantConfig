@@ -32,9 +32,9 @@ Management of the Pi and Linux backend are done via [Putty](https://www.putty.or
 * __[Xiaomi Mi Box (x2)](https://www.mi.com/en/mibox/)__
 * __[TP-Link HS110 Power Switch (x2)](https://www.tp-link.com/au/products/details/cat-5258_HS110.html)__
 
-## Zwave / Zigbee Devices
-* __[Vera3 Controller](http://www.ikea.com/us/en/catalog/products/20318267/)__
-* __[Aeotec Door Sensor]()__
+## Zwave / Zigbee Devices (Not Integrated Yet)
+* __[Vera3 Controller](http://getvera.com/controllers/vera3/)__
+* __[Aeotec Door Sensor](https://aeotec.com/z-wave-door-window-sensor)__
 * __[Xiaomi Multifunction Gateway](https://www.gearbest.com/living-appliances/pp_344667.html)__
 * __[Xiaomi Smart Bluetooth Switch](https://www.gearbest.com/smart-light-bulb/pp_257679.html)__
 * __[Xiaomi Temperature and Humidity Sensor](https://www.gearbest.com/access-control/pp_626702.html)__
@@ -48,3 +48,9 @@ Management of the Pi and Linux backend are done via [Putty](https://www.putty.or
 * __[Enviro PHAT Sensors](https://shop.pimoroni.com/products/enviro-phat)__
 
 
+## What's Next
+
+* Z-Wave & Zigee Gear:  I am waiting on my Xiaomi gear to arrive and once it has i'll integrate it and my old Z-wave bits and pieces into it too.
+* Stats & Figures:  I've also been capturing a bunch of data with Telgraf and other scheduled tests like SpeedTest in the InfluxDB - I want to start adding these in as sensors and displaying them.
+* Interface: I also want to set up a lovelace interface - probably once i've got the rest of the sensors in place.
+* Automation:  Not doing alot of automation just yet, but will explore it more now that i've got some good data coming in and more control over devices.
