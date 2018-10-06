@@ -50,11 +50,11 @@ Management of the Pi and Linux backend are done via [Putty](https://www.putty.or
 
 ## What's Next
 
-# Z-Wave & Zigee Gear:  
+### Z-Wave & Zigee Gear:  
 * I am waiting on my Xiaomi gear to arrive and once it has i'll integrate it and my old Z-wave bits and pieces into it too.
-# * Stats & Figures:  
+### Stats & Figures:  
 * I've also been capturing a bunch of data with Telgraf and other scheduled tests like SpeedTest in the InfluxDB - I want to start adding these in as sensors and displaying them.
-# Interface: 
+### Interface: 
 * I also want to set up a lovelace interface - probably once i've got the rest of the sensors in place.
-# Automation:  
+### Automation:  
 * Not doing alot of automation just yet, but will explore it more now that i've got some good data coming in and more control over devices.
