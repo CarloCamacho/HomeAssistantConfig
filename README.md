@@ -41,7 +41,7 @@ Management of the Pi and Linux backend are done via [Putty](https://www.putty.or
 
 ## Hardwired Devices
 * __[Cisco SG300-28p Switch](https://www.cisco.com/c/en/us/support/switches/sg300-28pp-28-port-gigabit-poe-plus-managed-switch/model.html)__
-* __[Synology DS412+J ](https://www.synology.com/en-us/support/download/DS412+#utilities)__
+* __[Synology DS412+ ](https://www.synology.com/en-us/support/download/DS412+#utilities)__
 * __[Mikrotik hEX Router ](https://mikrotik.com/product/RB750Gr3)__ 
 * __[Mikrotik hAP ac lite Wireless AP](https://mikrotik.com/product/RB952Ui-5ac2nD)__
 * __[Vivotek PD8136 Pan/Tilt Dome Camera ](https://www.vivotek.com/website/pd8136/)__
@@ -50,7 +50,11 @@ Management of the Pi and Linux backend are done via [Putty](https://www.putty.or
 
 ## What's Next
 
-* Z-Wave & Zigee Gear:  I am waiting on my Xiaomi gear to arrive and once it has i'll integrate it and my old Z-wave bits and pieces into it too.
-* Stats & Figures:  I've also been capturing a bunch of data with Telgraf and other scheduled tests like SpeedTest in the InfluxDB - I want to start adding these in as sensors and displaying them.
-* Interface: I also want to set up a lovelace interface - probably once i've got the rest of the sensors in place.
-* Automation:  Not doing alot of automation just yet, but will explore it more now that i've got some good data coming in and more control over devices.
+# Z-Wave & Zigee Gear:  
+* I am waiting on my Xiaomi gear to arrive and once it has i'll integrate it and my old Z-wave bits and pieces into it too.
+# * Stats & Figures:  
+* I've also been capturing a bunch of data with Telgraf and other scheduled tests like SpeedTest in the InfluxDB - I want to start adding these in as sensors and displaying them.
+# Interface: 
+* I also want to set up a lovelace interface - probably once i've got the rest of the sensors in place.
+# Automation:  
+* Not doing alot of automation just yet, but will explore it more now that i've got some good data coming in and more control over devices.
