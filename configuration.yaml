@@ -1,0 +1,103 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  # Location required to calculate the time the sun rises and sets
+  latitude: !secret lat
+  longitude: !secret long
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: !secret elv
+  # metric for Metric, imperial for Imperial
+  unit_system: metric
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: Australia/Perth
+  # Customization file
+  customize: !include customize.yaml
+
+# Enables the frontend
+frontend:
+
+# Enables configuration UI
+config:
+
+# Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+http:
+#  base_url: kelwebby.duckdns.org:8123
+#  api_password: !secret api_password
+  ssl_certificate: /home/homeassistant/dehydrated/certs/kelwebby.duckdns.org/fullchain.pem
+  ssl_key: /home/homeassistant/dehydrated/certs/kelwebby.duckdns.org/privkey.pem
+
+duckdns:
+  domain: kelwebby
+  access_token: !secret duckdns_token
+  
+# Checks for available updates
+# Note: This component will send some information about your system to
+# the developers to assist with development of Home Assistant.
+# For more information, please see:
+# https://home-assistant.io/blog/2016/10/25/explaining-the-updater/
+updater:
+  # Optional, allows Home Assistant developers to focus on popular components.
+  # include_used_components: true
+
+# Add Custome Components from PBruckner. Eg. Life360 addon
+custom_updater:
+  component_urls:
+    - https://raw.githubusercontent.com/pnbruckner/homeassistant-config/master/custom_components.json
+
+
+# Discover some devices automatically
+discovery:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+# Enables support for tracking state changes over time
+history:
+
+# View all events in a logbook
+logbook:
+
+# Enables a map showing the location of tracked devices
+map:
+
+# Track the sun
+sun:
+
+# Text to speech
+tts:
+  - platform: google
+
+# lights
+light:
+  - platform: lifx
+
+# Log data to a DB on the linux server
+influxdb:
+  host: 192.168.1.26
+
+weblink:
+  entities:
+    - name: SpeedTest History
+      url: http://192.168.1.26:3003/dashboard/db/speedtest-dashboard
+      icon: mdi:router-wireless
+    - name: HA Graphs
+      url: http://192.168.1.26:3003/dashboard/db/home-assistant-dashboard
+      icon: mdi:router-wireless
+    - name: PiHole
+      url: http://192.168.1.26/admin/index.php
+      icon: mdi:router-wireless
+
+ifttt:
+  key: !secret ifttt_key
+
+camera:
+  - platform: generic
+    still_image_url: http://192.168.1.30/cgi-bin/viewer/video.jpg?resolution=1280x800
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+zone: !include zones.yaml
+sensor: !include sensor.yaml
+switch: !include switch.yaml
+device_tracker: !include device_tracker.yaml

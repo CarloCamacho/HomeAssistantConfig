@@ -1,0 +1,131 @@
+
+default_view:
+    view: yes
+    icon: mdi:home
+    entities:
+      - group.TPLink_Lounge
+      - group.EnviroPhat
+      - group.Weather
+      - group.WebLinks
+      - group.People
+
+People:
+  name: "People"
+  entities:
+    - group.ian
+    - sensor.life360_ian_battery
+    - group.kelly
+    - sensor.life360_kelly_battery
+
+power:
+  view: yes
+  name: Power Control
+  entities:
+    - switch.tv_lg
+    - switch.soundbar
+    - switch.aircon
+
+ian:
+  name: Ian
+  entities:
+    - device_tracker.ian
+    - device_tracker.life360_ian_franklin
+
+kelly:
+  name: Kelly
+  entities:
+    - device_tracker.kelly
+    - device_tracker.life360_kelly_franklin
+
+Lights_Menu:
+    view: yes
+    name: "LIFX Lights"
+    entities:
+      - group.LIFXLights
+      - group.Lights
+
+Cameras_Menu:
+    view: yes
+    name: "Cameras"
+    entities:
+      - camera.generic_camera
+
+Media_Players:
+    view: yes
+    name: "Media Players"
+    entities:
+      - group.MediaEntities
+
+WebLinks:
+  name: "Web Links"
+  entities:
+    - weblink.pihole
+    - weblink.speedtest_history
+    - weblink.ha_graphs
+
+MediaEntities:
+  name: "Media Devices"
+  entities:
+    - media_player.home_group
+    - media_player.living_room_speaker
+    - media_player.lounge_tv
+    - media_player.mancave_speaker
+    - media_player.mi_box
+    - media_player.mibox3bedroom
+
+LIFXLights:
+  name: "LIFX Lights"
+  entities:
+    - light.lamp
+    - light.mancave1
+    - light.v1
+    - light.v2
+    - light.v3
+    - light.v4
+    - light.v5
+
+TPLink_Lounge:
+  name: "Lounge Room"
+  entities:
+    - switch.lounge_power
+    - light.lamp
+    - media_player.living_room_speaker
+    - media_player.mi_box
+    - sensor.tp_link_amps
+    - sensor.tp_link_kw
+    - sensor.tp_link_volts
+    - sensor.tp_link_watts
+
+Lights:
+  name: "Verandah Lights"
+  entities:
+    - light.v1
+    - light.v2
+    - light.v3
+    - light.v4
+    - light.v5
+
+
+EnviroPhat:
+  name: "ManCave"
+  #view: yes
+  entities:
+    - media_player.mancave_speaker
+    - light.mancave1
+    - sensor.volume_used_volume_1
+    - sensor.sonarr_upcoming
+    - sensor.temperature
+    - sensor.pressure
+    - sensor.light
+
+Weather:
+  name: "BOM Weather Readings"
+  #view: yes
+  entities:    
+    - sensor.bom_swan_valley_air_temp_c
+    - sensor.bom_swan_valley_feels_like_c
+    - sensor.bom_swan_valley_rain_today
+    - sensor.bom_swan_valley_relative_humidity
+    - sensor.bom_swan_valley_wind_direction
+    - sensor.bom_swan_valley_wind_gust_kmh
+    - sensor.bom_swan_valley_wind_speed_kmh

@@ -1,0 +1,64 @@
+sensor.accelerometer_z: 
+  friendly_name: "Acc Z"
+  icon: "mdi:airplane-landing"
+sensor.bom_swan_valley_air_temp_c: 
+  friendly_name: "Air Temp"
+sensor.bom_swan_valley_feels_like_c: 
+  friendly_name: "Feels Like"
+  icon: "mdi:weather-cloudy"
+sensor.bom_swan_valley_rain_today: 
+  friendly_name: "Rain Today"
+  icon: "mdi:weather-pouring"
+sensor.bom_swan_valley_relative_humidity: 
+  friendly_name: "Relative Humidity"
+  icon: "mdi:weather-sunset"
+sensor.bom_swan_valley_wind_direction: 
+  friendly_name: "Wind Direction"
+  icon: "mdi:weather-windy"
+sensor.bom_swan_valley_wind_gust_kmh: 
+  friendly_name: "Wind Gust"
+  icon: "mdi:weather-windy"
+sensor.bom_swan_valley_wind_speed_kmh: 
+  friendly_name: "Wind Speed"
+  icon: "mdi:weather-windy"
+sensor.light: 
+  friendly_name: Lux
+  unit_of_measurement: 'lux'
+sensor.magnetometer_x: 
+  friendly_name: "Magnetic X"
+  icon: "mdi:arrow-up-bold-hexagon-outline"
+sensor.pressure: 
+  friendly_name: "Pressure"
+  icon: "mdi:weight"
+sensor.temperature: 
+  friendly_name: "Room Temp"
+sensor.tp_link_amps:
+  friendly_name: "Amps"
+  icon: "mdi:flash"
+sensor.tp_link_kw:
+  friendly_name: "Total Consumption"
+  icon: "mdi:flash"
+sensor.tp_link_volts:
+  friendly_name: "Voltage"
+  icon: "mdi:flash"
+sensor.tp_link_watts:
+  friendly_name: "Current Power Draw"
+  icon: "mdi:flash"
+switch.lounge_tv:
+  friendly_name: "Turn off at the wall"
+light.mancave1:
+  friendly_name: "ManCave Light"
+sensor.volume_used_volume_1:  
+  friendly_name: "NAS: Percentage Used"
+sensor.life360_ian_battery:
+  friendly_name: Ian's Phone Battery
+  icon: "mdi:battery"
+sensor.life360_kelly_battery:
+  friendly_name: Kelly's Phone Battery
+  icon: "mdi:battery"
+group.ian:
+  entity_picture: https://www.life360.com/img/user_images/e246f8b1-7e4c-4706-8eeb-106b1c4802b1/12a0284e-f7c3-40c4-b37c-50ac3a383183.png?fd=2
+group.kelly:
+  entity_picture: https://www.life360.com/img/user_images/a6a95b2e-68d8-47c3-9638-4b51c7631560/f388cb00-5e33-47d6-ba09-9551d7de3e47.png?fd=2
+camera.generic_camera:
+  friendly_name: "Driveway Cam"

@@ -1,0 +1,40 @@
+title: My Awesome Home
+# Include external resources
+resources:
+  - url: /local/my-custom-card.js
+    type: js
+  - url: /local/my-webfont.css
+    type: css
+
+# Optional background for all views. Check https://developer.mozilla.org/en-US/docs/Web/CSS/background for more examples.
+background: center / cover no-repeat url("/background.png") fixed
+# Exclude entities from "Unused entities" view
+excluded_entities:
+views:
+  - title: Home
+    cards:
+      - type: entities
+        title: all lights
+        show_header_toggle: true
+        entities:
+          - light.lamp
+          - light.mancave1
+          - light.v1
+          - light.v2
+          - light.v3
+          - light.v4
+          - light.v5
+      - type: entities
+        title: all devices
+        show_header_toggle: true
+        entities:
+          - device_tracker.ians_phone
+          - device_tracker.kellys_phone
+      - type: media-control
+        entity: media_player.mibox3bedroom
+      - type: media-control
+        entity: media_player.living_room_speaker
+      - type: media-control
+        entity: media_player.mi_box_2
+      - type: media-control
+        entity: media_player.mi_box
