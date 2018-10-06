@@ -4,19 +4,22 @@
 </p>
 
 These are the [Home Assistant](https://home-assistant.io/) configuration files used in my Home Assistant (HA) setup. 
-I relied on repositories of other HA users quite a bit when I was getting started for ideas and example code.  Hopefully this repository will help someone else who is getting started. 
+I'm new to the home automation game and have found Hopefully this repository will help someone else who is getting started. 
 
-HomeAssistant is currently running on a Raspberry PI 3 Model B+.  I also have a headless Debian Stretch server that handles data storage via InfluxDB, visualisation with Grafana, and various tasks that I prefer to run under linux. Eg. Docker, Crontab    
+HomeAssistant is currently running on a Raspberry PI 3 Model B+.  I am running [Hassbian](https://www.home-assistant.io/docs/installation/hassbian/installation/) because I am comfortable with the Debian architecture it runs on and like the freedom it provides. I also have a seprate headless Debian Stretch server that handles data storage via [InfluxDB](https://www.influxdata.com/time-series-platform/influxdb/), infrastructure data gathered by [Telegraf](https://www.influxdata.com/time-series-platform/telegraf), visualisation with [Grafana](https://grafana.com/), and various tasks that I prefer to run under linux. Eg. Docker, Crontab    
+
+A fantastic resource for combing all of the above products is Phil Hawthorne's blog: https://philhawthorne.com/getting-started-with-grafana-influxdb-for-home-assistant/
+He also has a great Docker image for InfluxDB & Grafana that greatly simplifies the setup process:  https://github.com/philhawthorne
 
 # Editing the Configuration Files:
 I edit the majority of the HA configuration files via Samba share on a Windows 10 workstation using [Visual Studio Code](https://code.visualstudio.com/).
-Management of the Pi and Linux backend are done via Putty.
+Management of the Pi and Linux backend are done via [Putty](https://www.putty.org/).
 
 # Connected Devices:
 
 ## Cloud Resources:
 * __[Australian Bureau of Meteorology](http://www.bom.gov.au)__
-* __[IFTT](https://ifttt.com)__
+* __[IFTTT](https://ifttt.com)__
 * __[Life360](https://www.life360.com/)__
 * __[DuckDNS](https://www.duckdns.org/)__
 * __[SpeedTest-cli](https://github.com/sivel/speedtest-cli)__
