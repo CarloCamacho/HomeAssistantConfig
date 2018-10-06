@@ -1,24 +1,24 @@
-- id: '1538755640452'
-  alias: Turn off lounge after 11pm if TV is left on
-  trigger:
-  - above: '20'
-    entity_id: sensor.tp_link_watts
-    platform: numeric_state
-  condition:
-  - after: '00:00'
-    condition: time
-  action:
-  - alias: ''
-    data:
-      entity_id: switch.soundbar
-    service: switch.turn_off
-  - data:
-      entity_id: switch.tv_lg
-    service: switch.turn_off
-  - data:
-      entity_id: light.lamp
-    service: light.turn_off
-  - data:
-      entity_id: media_player.mancave_speaker
-      message: Goodnight
-    service: tts.google_say
+# - id: '1538755640452'
+#   alias: Turn off lounge after 11pm if TV is left on
+#   trigger:
+#   - above: '20'
+#     entity_id: sensor.tp_link_watts
+#     platform: numeric_state
+#   condition:
+#   - after: '00:00'
+#     condition: time
+#   action:
+#   - alias: ''
+#     data:
+#       entity_id: switch.soundbar
+#     service: switch.turn_off
+#   - data:
+#       entity_id: switch.tv_lg
+#     service: switch.turn_off
+#   - data:
+#       entity_id: light.lamp
+#     service: light.turn_off
+#   - data:
+#       entity_id: media_player.mancave_speaker
+#       message: Goodnight
+#     service: tts.google_say
