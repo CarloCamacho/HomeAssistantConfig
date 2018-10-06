@@ -48,7 +48,7 @@ Management of the Pi and Linux backend are done via [Putty](https://www.putty.or
 * __[Enviro PHAT Sensors](https://shop.pimoroni.com/products/enviro-phat)__
 * __[Pi-Hole](https://pi-hole.net/)__
 
-
+   
 ## What's Next
 
 ### Z-Wave & Zigee Gear:  
