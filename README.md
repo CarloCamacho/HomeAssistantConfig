@@ -46,6 +46,7 @@ Management of the Pi and Linux backend are done via [Putty](https://www.putty.or
 * __[Mikrotik hAP ac lite Wireless AP](https://mikrotik.com/product/RB952Ui-5ac2nD)__
 * __[Vivotek PD8136 Pan/Tilt Dome Camera ](https://www.vivotek.com/website/pd8136/)__
 * __[Enviro PHAT Sensors](https://shop.pimoroni.com/products/enviro-phat)__
+* __[Pi-Hole](https://pi-hole.net/)__
 
 
 ## What's Next
