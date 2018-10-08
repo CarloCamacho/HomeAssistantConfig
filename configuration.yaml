@@ -39,12 +39,6 @@ updater:
   # Optional, allows Home Assistant developers to focus on popular components.
   # include_used_components: true
 
-# Add Custome Components from PBruckner. Eg. Life360 addon
-custom_updater:
-  component_urls:
-    - https://raw.githubusercontent.com/pnbruckner/homeassistant-config/master/custom_components.json
-
-
 # Discover some devices automatically
 discovery:
 

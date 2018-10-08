@@ -63,3 +63,14 @@
       life360_kelly_driving:
         value_template: '{{ states.device_tracker.life360_kelly_franklin.attributes.driving }}'
         unit_of_measurement: 'boolean'
+
+  # - platform: influxdb
+  #   host: 192.168.1.26
+  #   username: !secret influx_user
+  #   password: !secret influx_pass
+  #   queries:
+  #     - name: Average Internet Download
+  #       where: '"field" = ''download'''
+  #       measurement: '"MBps"'
+  #       field: download
+  #       database: speedtest
