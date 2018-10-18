@@ -34,6 +34,19 @@
       - pressure
       - light
 
+# Monitor the PI
+  - platform: systemmonitor
+    resources:
+      - type: memory_free
+      - type: memory_use_percent
+      - type: load_1m
+      - type: load_5m
+      - type: load_15m
+      - type: since_last_boot
+      - type: load_15m
+
+
+# Templated Sensors
   - platform: template
     sensors:
       # Power Sensors from the TP-Link HS110
@@ -63,6 +76,7 @@
       life360_kelly_driving:
         value_template: '{{ states.device_tracker.life360_kelly_franklin.attributes.driving }}'
         unit_of_measurement: 'boolean'
+
 
   # - platform: influxdb
   #   host: 192.168.1.26
