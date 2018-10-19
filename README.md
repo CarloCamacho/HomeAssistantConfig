@@ -55,7 +55,7 @@ Management of the Pi and Linux backend are done via [Putty](https://www.putty.or
 * I am waiting on my Xiaomi gear to arrive and once it has i'll integrate it into HA with a bunch of old Z-Wave bits and pieces I have too. Contemplating whether to keep the Vera3, or purchase a USB Z-Wave dongle for the Pi to simplify the setup a bit... One less hub is always better in my books.
 ### Stats & Figures:  
 * I've been capturing a bunch of data with Telgraf and want to expand on that a bit.  I also have a scheduled SpeedTest capturing data into InfluxDB. I want to start adding these in as sensors and displaying them.
-### Interface: 
-* I want to set up a lovelace interface, but i'll probably wait until I have the rest of my sensors inplace.  
+~~### Interface: ~~
+~~* I want to set up a lovelace interface, but i'll probably wait until I have the rest of my sensors inplace.  ~~
 ### Automation:  
 * Not doing alot of automation just yet, but will explore it more soon now that i've got some good data coming in and more control over devices.

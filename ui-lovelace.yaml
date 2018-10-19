@@ -1,72 +1,149 @@
+resources:
+  - url: /local/custom_ui/gauge-card.js
+    type: js
+  - url: /local/custom_ui/light-entity-row.js
+    type: js
+  - url: /local/custom_ui/bignumber-card.js
+    type: js
+
 title: My Lovely Home Automation
 views:
-  - title: Home
+  - icon: mdi:home-assistant
     cards:
-      - type: picture-entity
-        title: Driveway Cam
-        entity: camera.generic_camera
-        camera_image: camera.generic_camera
-        show_info: true
-        tap_action: dialog
+    - type: weather-forecast
+      title: Forcast
+      entity: weather.dark_sky
+    - type: entities
+      title: Weather
+      show_header_toggle: true
+      entities:
+        - sensor.bom_swan_valley_air_temp_c
+        - sensor.bom_swan_valley_feels_like_c
+        - sensor.bom_swan_valley_rain_today
+        - sensor.bom_swan_valley_relative_humidity
+        - sensor.bom_swan_valley_wind_direction
+        - sensor.bom_swan_valley_wind_gust_kmh
+        - sensor.bom_swan_valley_wind_speed_kmh
 
-      - type: media-control
-        entity: media_player.chrome
-
-      - type: media-control
-        entity: media_player.living_room_speaker
-
-      - type: media-control
-        entity: media_player.lounge_tv
-
-      - type: media-control
-        entity: media_player.mancave_speaker
-
-      - type: media-control
-        entity: media_player.mi_box
-
-      - type: media-control
-        entity: media_player.mibox3bedroom
-
-      - type: entity-filter
-        title: Device Trackers
-        show_header_toggle: true
-        entities:
-          - device_tracker.life360_ian_franklin
-          - device_tracker.life360_kelly_franklin
-        state_filter:
-          - 'home'
-        card:
-          type: glance
-          title: My Device Trackers
-
-
-      - type: entities
-        title: Groups
-        show_header_toggle: true
-        entities:
-          - group.all_devices
-          - group.all_lights
-          - group.all_switches
-          - group.cameras_menu
-          - group.default_view
-          - group.envirophat
+    - type: entities
+      title: People
+      show_header_toggle: true
+      entities:
           - group.ian
-          - group.kelly
-          - group.lifxlights
-          - group.lights
-          - group.lights_menu
-          - group.media_players
-          - group.mediaentities
-          - group.people
-          - group.power
-          - group.tplink_lounge
-          - group.weather
-          - group.weblinks
+          - group.kelly        
 
+    - type: horizontal-stack
+      cards:
+      - type: custom:bignumber-card
+        title: Ian's Battery
+        entity: sensor.life360_ian_battery
+        scale: 30px
+        from: left
+        min: 0
+        max: 100
+        severity:
+          - value: 100
+            style: 'var(--label-badge-green)'
+          - value: 50
+            style: 'var(--label-badge-yellow)'
+          - value: 10
+            style: 'var(--label-badge-red)'
+      - type: custom:bignumber-card
+        title: Kelly's Battery
+        entity: sensor.life360_kelly_battery
+        scale: 30px
+        from: left
+        min: 0
+        max: 100
+        severity:
+          - value: 100
+            style: 'var(--label-badge-green)'
+          - value: 50
+            style: 'var(--label-badge-yellow)'
+          - value: 10
+            style: 'var(--label-badge-red)'
+
+    - type: history-graph
+      entities:  [sensor.life360_ian_battery, sensor.life360_kelly_battery]
+      hours_to_show: 48
+      title: Battery History
+
+  - title: ManCave
+    cards:
+    - type: glance
+      title: Pi Sensors
+      entities:
+        - sensor.light
+        - sensor.pressure
+        - sensor.temperature
+
+    - type: entities
+      title: Man Cave Light
+      entities:
+        - type: "custom:light-entity-row"
+          entity: light.mancave1
+          name: Man Cave Light      # optional
+
+    - type: media-control
+      entity: media_player.mancave_speaker
+
+    - type: vertical-stack
+      cards:
+      - type: gauge
+        title: Pi CPU 1m
+        entity:  sensor.load_1m
+        min: 0
+        max: 5
+        severity:
+          red: 5
+          green: 0.1
+          yellow: 0.5
+      - type: horizontal-stack
+        cards:
+        - type: gauge
+          title: Pi CPU 5m
+          entity:  sensor.load_5m
+          min: 0
+          max: 5
+          severity:
+            red: 5
+            green: 0.1
+            yellow: 0.5
+
+        - type: gauge
+          title: Pi CPU 15m
+          entity:  sensor.load_15m
+          min: 0
+          max: 5
+          severity:
+            red: 5
+            green: 0.1
+            yellow: 0.5
+
+
+  - title: Lounge
+    cards:
       - type: entities
-        title: Lights
+        title: Lounge
         show_header_toggle: true
         entities:
+          - group.tplink_lounge
+          - switch.aircon
+          - switch.soundbar
+          - switch.tv_lg
+          - sensor.tp_link_amps
+          - sensor.tp_link_kw
+          - sensor.tp_link_volts
+          - sensor.tp_link_watts
+
+  - title: Lights
+    icon: mdi:lightbulb-on
+    cards:
+      - type: entities
+        title: All Lights
+        show_header_toggle: true
+        entities:
+          - group.lights
           - light.lamp
           - light.mancave1
           - light.v1
@@ -76,59 +153,20 @@ views:
           - light.v5
 
       - type: entities
-        title: Sensors
-        show_header_toggle: true
+        title: Lamp Control
         entities:
-          - sensor.bom_swan_valley_air_temp_c
-          - sensor.bom_swan_valley_feels_like_c
-          - sensor.bom_swan_valley_rain_today
-          - sensor.bom_swan_valley_relative_humidity
-          - sensor.bom_swan_valley_wind_direction
-          - sensor.bom_swan_valley_wind_gust_kmh
-          - sensor.bom_swan_valley_wind_speed_kmh
-          - sensor.custom_card_tracker
-          - sensor.custom_component_tracker
-          - sensor.life360_ian_battery
-          - sensor.life360_ian_driving
-          - sensor.life360_kelly_battery
-          - sensor.life360_kelly_driving
-          - sensor.light
-          - sensor.pressure
-          - sensor.sonarr_upcoming
-          - sensor.temperature
-          - sensor.tp_link_amps
-          - sensor.tp_link_kw
-          - sensor.tp_link_volts
-          - sensor.tp_link_watts
-          - sensor.volume_used_volume_1
+          - type: "custom:light-entity-row"
+            entity: light.lamp
+            icon: mdi:lamp  # optional
+            name: Lamp      # optional
 
-      - type: entities
-        title: Sun
-        show_header_toggle: true
-        entities:
-          - sun.sun
 
-      - type: entities
-        title: Switchs
-        show_header_toggle: true
-        entities:
-          - switch.aircon
-          - switch.lounge_power
-          - switch.soundbar
-          - switch.tv_lg
-
-      - type: entities
-        title: Weblinks
-        show_header_toggle: true
-        entities:
-          - weblink.ha_graphs
-          - weblink.pihole
-          - weblink.speedtest_history
-
-      - type: entities
-        title: Zones
-        show_header_toggle: true
-        entities:
-          - zone.home
-          - zone.ians_work
-          - zone.kellys_work
+  - title: Cams
+    icon: mdi:camera
+    cards:
+      - type: picture-entity
+        title: Driveway Cam
+        entity: camera.generic_camera
+        camera_image: camera.generic_camera
+        show_info: true
+        tap_action: dialog

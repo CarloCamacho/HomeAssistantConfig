@@ -62,3 +62,7 @@ group.kelly:
   entity_picture: https://www.life360.com/img/user_images/a6a95b2e-68d8-47c3-9638-4b51c7631560/f388cb00-5e33-47d6-ba09-9551d7de3e47.png?fd=2
 camera.generic_camera:
   friendly_name: "Driveway Cam"
+weather.dark_sky:
+  friendly_name: "Forecast"
+
+
