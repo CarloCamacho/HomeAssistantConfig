@@ -136,6 +136,9 @@ views:
           - sensor.tp_link_volts
           - sensor.tp_link_watts
 
+      - type: media-control
+        entity: media_player.lounge_tv
+
   - title: Lights
     icon: mdi:lightbulb-on
     cards:

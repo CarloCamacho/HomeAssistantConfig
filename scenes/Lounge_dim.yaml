@@ -1,0 +1,13 @@
+scene:
+  - name: Livingroom normal
+    entities:
+        light.lamp:
+            state: on
+            transition: 2
+            brightness_pct: 60
+  - name: Livingroom dim
+    entities:
+        light.lamp:
+            state: on
+            transition: 2
+            brightness_pct: 30
