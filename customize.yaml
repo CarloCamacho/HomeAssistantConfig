@@ -64,5 +64,16 @@ camera.generic_camera:
   friendly_name: "Driveway Cam"
 weather.dark_sky:
   friendly_name: "Forecast"
-
+sensor.tp_link_fountain_amps:
+  friendly_name: "Amps"
+  icon: "mdi:flash"
+sensor.tp_link_fountain_kw:
+  friendly_name: "Total Consumption"
+  icon: "mdi:flash"
+sensor.tp_link_fountain_volts:
+  friendly_name: "Voltage"
+  icon: "mdi:flash"
+sensor.tp_link_fountain_watts:
+  friendly_name: "Current Power Draw"
+  icon: "mdi:flash"
 

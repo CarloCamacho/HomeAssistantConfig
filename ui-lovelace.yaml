@@ -68,6 +68,33 @@ views:
       hours_to_show: 48
       title: Battery History
 
+  - title: Lights
+    icon: mdi:lightbulb-on
+    cards:
+      - type: entities
+        title: All Lights
+        show_header_toggle: true
+        entities:
+          - group.lights
+          - light.lamp
+          - light.mancave1
+          - light.v1
+          - light.v2
+          - light.v3
+          - light.v4
+          - light.v5
+
+  - title: Cams
+    icon: mdi:camera
+    cards:
+      - type: picture-entity
+        title: Driveway Cam
+        entity: camera.generic_camera
+        camera_image: camera.generic_camera
+        show_info: true
+        tap_action: dialog
+
+
   - title: ManCave
     cards:
     - type: glance
@@ -136,25 +163,6 @@ views:
           - sensor.tp_link_volts
           - sensor.tp_link_watts
 
-      - type: media-control
-        entity: media_player.lounge_tv
-
-  - title: Lights
-    icon: mdi:lightbulb-on
-    cards:
-      - type: entities
-        title: All Lights
-        show_header_toggle: true
-        entities:
-          - group.lights
-          - light.lamp
-          - light.mancave1
-          - light.v1
-          - light.v2
-          - light.v3
-          - light.v4
-          - light.v5
-
       - type: entities
         title: Lamp Control
         entities:
@@ -163,13 +171,39 @@ views:
             icon: mdi:lamp  # optional
             name: Lamp      # optional
 
+      - type: media-control
+        entity: media_player.lounge_tv
 
-  - title: Cams
-    icon: mdi:camera
+
+  - title: Verandah
     cards:
-      - type: picture-entity
-        title: Driveway Cam
-        entity: camera.generic_camera
-        camera_image: camera.generic_camera
-        show_info: true
-        tap_action: dialog
+      - type: entities
+        title: Verandah - All Devices 
+        show_header_toggle: true
+        entities:
+          - switch.fountain
+          - light.v1
+          - light.v2
+          - light.v3
+          - light.v4
+          - light.v5
+
+      - type: entities
+        title: Fountain Power
+        entities:
+          - sensor.tp_link_fountain_amps
+          - sensor.tp_link_fountain_kw
+          - sensor.tp_link_fountain_volts
+          - sensor.tp_link_fountain_watts
+
+      - type: entities
+        title: Verandah Lights
+        entities:
+          - type: "custom:light-entity-row"
+            entity: group.lights
+            icon: mdi:lamp  # optional
+            name: Verandah      # optional
+
+      - type: media-control
+        entity: media_player.mancave_speaker
+

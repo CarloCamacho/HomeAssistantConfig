@@ -49,7 +49,7 @@
 # Templated Sensors
   - platform: template
     sensors:
-      # Power Sensors from the TP-Link HS110
+      # Power Sensors from the TP-Link HS110 - Lounge
       tp_link_amps:
         value_template: '{{ states.switch.lounge_power.attributes["current_a"] | replace(" A", "") | float }}'
         unit_of_measurement: 'A'
@@ -76,6 +76,19 @@
       life360_kelly_driving:
         value_template: '{{ states.device_tracker.life360_kelly_franklin.attributes.driving }}'
         unit_of_measurement: 'boolean'
+      # Power Sensors from the TP-Link HS110 - Fountain
+      tp_link_fountain_amps:
+        value_template: '{{ states.switch.fountain.attributes["current_a"] | replace(" A", "") | float }}'
+        unit_of_measurement: 'A'
+      tp_link_fountain_watts:
+        value_template: '{{ states.switch.fountain.attributes["current_power_w"] | replace(" W", "") | float }}'
+        unit_of_measurement: 'W'
+      tp_link_fountain_kw:
+        value_template: '{{ states.switch.fountain.attributes["total_energy_kwh"] | replace(" kW", "") | float }}'
+        unit_of_measurement: 'kW'
+      tp_link_fountain_volts:
+        value_template: '{{ states.switch.fountain.attributes["voltage"] | replace(" V", "") | float }}'
+        unit_of_measurement: 'V'
 
 
   # - platform: influxdb
