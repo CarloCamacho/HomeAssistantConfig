@@ -1,6 +1,8 @@
 ## TP_Link HS110 Power Control and Monitoring - Lounge
   - platform: tplink
     host: 192.168.1.29
+  
+  - platform: tplink
     host: 192.168.1.36
 
 ## Broadlink Mini - Lounge

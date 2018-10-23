@@ -102,6 +102,13 @@ camera:
 #     client_id: !secret spotify_clientid
 #     client_secret: !secret spotify_fountain_secret
 
+
+xiaomi_aqara:
+  discovery_retry: 5
+  gateways:
+    - key: t58qurxif8wrquot
+
+
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml

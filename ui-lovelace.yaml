@@ -68,6 +68,21 @@ views:
       hours_to_show: 48
       title: Battery History
 
+    - type: horizontal-stack
+      cards:
+      - type: sensor
+        name: Temperature
+        entity: sensor.temperature_158d000233fe42
+        min: 0
+        max: 50
+
+      - type: sensor
+        name: Humidity
+        entity: sensor.humidity_158d000233fe42
+        min: 0
+        max: 100
+
+
   - title: Lights
     icon: mdi:lightbulb-on
     cards:
@@ -110,6 +125,12 @@ views:
         - type: "custom:light-entity-row"
           entity: light.mancave1
           name: Man Cave Light      # optional
+
+    - type: entities
+      title: Mi Light
+      entities:
+        - type: "custom:light-entity-row"
+          entity: light.gateway_light_7c49eb1ce832
 
     - type: media-control
       entity: media_player.mancave_speaker
@@ -173,6 +194,20 @@ views:
 
       - type: media-control
         entity: media_player.lounge_tv
+
+      - type: horizontal-stack
+        cards:
+        - type: sensor
+          name: Temperature
+          entity: sensor.temperature_158d0002322539
+          min: 0
+          max: 50
+
+        - type: sensor
+          name: Temperature
+          entity: sensor.humidity_158d0002322539
+          min: 0
+          max: 100
 
 
   - title: Verandah

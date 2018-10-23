@@ -76,4 +76,7 @@ sensor.tp_link_fountain_volts:
 sensor.tp_link_fountain_watts:
   friendly_name: "Current Power Draw"
   icon: "mdi:flash"
-
+binary_sensor.switch_158d00022c35f:
+  friendly_name: "Test Switch"
+binary_sensor.switch_158d000228685d:
+  friendly_name: "Front Door Switch"
