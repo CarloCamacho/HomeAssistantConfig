@@ -2,9 +2,9 @@
   trigger:
   - entity_id: group.kelly
     for: 00:01:00
-    from: Away
+    from: 'not_home'
     platform: state
-    to: Home
+    to: 'home'
   condition:
   - after: '11:00'
     before: '23:00'

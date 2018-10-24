@@ -97,18 +97,18 @@ camera:
   - platform: generic
     still_image_url: http://192.168.1.30/cgi-bin/viewer/video.jpg?resolution=1280x800
 
-# media_player:
-#   - platform: spotify
-#     client_id: !secret spotify_clientid
-#     client_secret: !secret spotify_fountain_secret
-
-
 xiaomi_aqara:
   discovery_retry: 5
   gateways:
     - key: t58qurxif8wrquot
 
+notify:
+  - name: Telegram
+    platform: telegram
+    api_key: !secret chat_API 
+    chat_id: !secret chat_ID
 
+   
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
@@ -117,4 +117,4 @@ sensor: !include sensor.yaml
 switch: !include switch.yaml
 device_tracker: !include device_tracker.yaml
 scene: !include_dir_merge_list scenes/
-
+recorder: !include recorder.yaml

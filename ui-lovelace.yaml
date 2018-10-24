@@ -204,7 +204,7 @@ views:
           max: 50
 
         - type: sensor
-          name: Temperature
+          name: Humidity
           entity: sensor.humidity_158d0002322539
           min: 0
           max: 100
