@@ -6,3 +6,14 @@
 #         entity_id: media_player.mancave_speaker
 #         media_content_id: 'spotify:user:carlocamacho79:playlist:6VSacXLctp4yJBihkjj1Yq'
 #         media_content_type: music
+
+test_telegram:
+  alias: 'test_telegram'
+  sequence:
+    - service: notify.telegram
+      data:
+        title: Test Message!!
+        message: 'This is a test!'
+        data:
+          photo:
+            - url: https://s.abcnews.com/images/Lifestyle/puppy-ht-3-er-170907_4x3_992.jpg

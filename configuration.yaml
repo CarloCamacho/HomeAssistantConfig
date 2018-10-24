@@ -102,13 +102,19 @@ xiaomi_aqara:
   gateways:
     - key: t58qurxif8wrquot
 
+telegram_bot:
+  - platform: polling
+    api_key: !secret chat_API
+    allowed_chat_ids:
+      - !secret chat_ID
+
 notify:
-  - name: Telegram
-    platform: telegram
-    api_key: !secret chat_API 
+  - platform: telegram
+    name: telegram
     chat_id: !secret chat_ID
 
-   
+
+
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
