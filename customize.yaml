@@ -80,3 +80,7 @@ binary_sensor.switch_158d00022c35f:
   friendly_name: "Test Switch"
 binary_sensor.switch_158d000228685d:
   friendly_name: "Front Door Switch"
+sensor.envirophat_calib:
+  friendly_name: "Temp"
+
+

@@ -89,7 +89,10 @@
       tp_link_fountain_volts:
         value_template: '{{ states.switch.fountain.attributes["voltage"] | replace(" V", "") | float }}'
         unit_of_measurement: 'V'
-
+      # Calibrated envirophat temp sensor
+      envirophat_calib:
+        value_template: '{{ states.sensor.temperature.state | float - 10 }}'
+        unit_of_measurement: 'C'
 
   # - platform: influxdb
   #   host: 192.168.1.26

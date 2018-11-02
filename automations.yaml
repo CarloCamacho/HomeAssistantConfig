@@ -16,8 +16,8 @@
   - alias: ''
     data:
       entity_id: media_player.mancave_speaker
-      media_content_id: spotify:user:carlocamacho79:playlist:6VSacXLctp4yJBihkjj1Yq
-      media_content_type: music
+      media_content_id: 'spotify:user:carlocamacho79:playlist:6VSacXLctp4yJBihkjj1Yq'
+      media_content_type: 'music'
     service: media_player.media_play
 
 - alias: ManCave Light Switch
