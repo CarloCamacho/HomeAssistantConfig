@@ -13,12 +13,15 @@
   - data:
       entity_id: switch.fountain
     service: switch.toggle
-  - alias: ''
-    data:
-      entity_id: media_player.mancave_speaker
-      media_content_id: 'spotify:user:carlocamacho79:playlist:6VSacXLctp4yJBihkjj1Yq'
-      media_content_type: 'music'
-    service: media_player.media_play
+
+- alias: Verandah Lights on at Sun down
+  trigger:
+    platform: sun
+    event: sunset
+  condition:
+  action:
+  - service: light.toggle
+    entity_id: group.lights
 
 - alias: ManCave Light Switch
   trigger:
@@ -30,7 +33,6 @@
   action:
   - service: light.toggle
     entity_id: light.mancave1
-
 
 - alias: Verandah Light Switch
   trigger:

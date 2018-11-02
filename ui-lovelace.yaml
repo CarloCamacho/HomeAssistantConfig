@@ -32,55 +32,57 @@ views:
           - group.ian
           - group.kelly        
 
-    - type: horizontal-stack
+    - type: vertical-stack
       cards:
-      - type: custom:bignumber-card
-        title: Ian's Battery
-        entity: sensor.life360_ian_battery
-        scale: 30px
-        from: left
-        min: 0
-        max: 100
-        severity:
-          - value: 100
-            style: 'var(--label-badge-green)'
-          - value: 50
-            style: 'var(--label-badge-yellow)'
-          - value: 10
-            style: 'var(--label-badge-red)'
-      - type: custom:bignumber-card
-        title: Kelly's Battery
-        entity: sensor.life360_kelly_battery
-        scale: 30px
-        from: left
-        min: 0
-        max: 100
-        severity:
-          - value: 100
-            style: 'var(--label-badge-green)'
-          - value: 50
-            style: 'var(--label-badge-yellow)'
-          - value: 10
-            style: 'var(--label-badge-red)'
+      - type: horizontal-stack
+        cards:
+        - type: custom:bignumber-card
+          title: Ian's Battery
+          entity: sensor.life360_ian_battery
+          scale: 30px
+          from: left
+          min: 0
+          max: 100
+          severity:
+            - value: 100
+              style: 'var(--label-badge-green)'
+            - value: 50
+              style: 'var(--label-badge-yellow)'
+            - value: 10
+              style: 'var(--label-badge-red)'
+        - type: custom:bignumber-card
+          title: Kelly's Battery
+          entity: sensor.life360_kelly_battery
+          scale: 30px
+          from: left
+          min: 0
+          max: 100
+          severity:
+            - value: 100
+              style: 'var(--label-badge-green)'
+            - value: 50
+              style: 'var(--label-badge-yellow)'
+            - value: 10
+              style: 'var(--label-badge-red)'
 
-    - type: history-graph
-      entities:  [sensor.life360_ian_battery, sensor.life360_kelly_battery]
-      hours_to_show: 48
-      title: Battery History
+      - type: history-graph
+        entities:  [sensor.life360_ian_battery, sensor.life360_kelly_battery]
+        hours_to_show: 48
+        title: Battery History
 
-    - type: horizontal-stack
-      cards:
-      - type: sensor
-        name: Temperature
-        entity: sensor.temperature_158d000233fe42
-        min: 0
-        max: 50
+      - type: horizontal-stack
+        cards:
+        - type: sensor
+          name: Temperature
+          entity: sensor.temperature_158d000233fe42
+          min: 0
+          max: 50
 
-      - type: sensor
-        name: Humidity
-        entity: sensor.humidity_158d000233fe42
-        min: 0
-        max: 100
+        - type: sensor
+          name: Humidity
+          entity: sensor.humidity_158d000233fe42
+          min: 0
+          max: 100
 
 
   - title: Lights
@@ -102,20 +104,17 @@ views:
   - title: Cams
     icon: mdi:camera
     cards:
-      - type: picture-entity
-        title: Driveway Cam
-        entity: camera.generic_camera
-        camera_image: camera.generic_camera
-        show_info: true
-        tap_action: dialog
-
-      - type: picture-entity
-        title: ManCave Cam
-        entity: camera.mancave_cam
+      - type: picture-glance
+        title: ManCave
+        entities:
+          - light.mancave1
         camera_image: camera.mancave_cam
-        show_info: true
-        tap_action: dialog
-
+        
+      - type: picture-glance
+        title: Driveway Cam
+        entities: 
+          - camera.generic_camera
+        camera_image: camera.generic_camera
 
 
   - title: ManCave
