@@ -225,32 +225,35 @@ views:
 
   - title: Verandah
     cards:
-      - type: entities
-        title: Verandah - All Devices 
-        show_header_toggle: true
-        entities:
-          - switch.fountain
-          - light.v1
-          - light.v2
-          - light.v3
-          - light.v4
-          - light.v5
+    - type: entities
+      title: Fountain Power
+      entities:
+        - sensor.tp_link_fountain_amps
+        - sensor.tp_link_fountain_kw
+        - sensor.tp_link_fountain_volts
+        - sensor.tp_link_fountain_watts
+    
+    - type: vertical-stack
+      cards:
+        - type: entities
+          title: Verandah - All Devices 
+          show_header_toggle: true
+          entities:
+            - switch.fountain
+            - light.v1
+            - light.v2
+            - light.v3
+            - light.v4
+            - light.v5
 
-      - type: entities
-        title: Fountain Power
-        entities:
-          - sensor.tp_link_fountain_amps
-          - sensor.tp_link_fountain_kw
-          - sensor.tp_link_fountain_volts
-          - sensor.tp_link_fountain_watts
+        - type: entities
+          title: Verandah Lights
+          entities:
+            - type: "custom:light-entity-row"
+              entity: group.lights
+              icon: mdi:lamp  # optional
+              name: Verandah      # optional
 
-      - type: entities
-        title: Verandah Lights
-        entities:
-          - type: "custom:light-entity-row"
-            entity: group.lights
-            icon: mdi:lamp  # optional
-            name: Verandah      # optional
 
 
 

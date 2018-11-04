@@ -63,6 +63,8 @@ sun:
 # Text to speech
 tts:
   - platform: google
+    base_url: http://kelwebby.duckdns.org:8123
+
 
 #Weather
 weather:
@@ -105,7 +107,7 @@ camera:
 xiaomi_aqara:
   discovery_retry: 5
   gateways:
-    - key: t58qurxif8wrquot
+    - key: !secret xiaomi_aqara_key
 
 telegram_bot:
   - platform: polling
