@@ -6,7 +6,7 @@ resources:
   - url: /local/custom_ui/bignumber-card.js
     type: js
 
-title: My Lovely Home Automation
+title: Home Automation Dashboard
 views:
   - icon: mdi:home-assistant
     cards:
@@ -183,6 +183,8 @@ views:
             min: 0
             max: 1024
 
+      - type: media-control
+        entity: media_player.den
 
   - title: Lounge
     cards:
@@ -221,7 +223,6 @@ views:
           entity: sensor.humidity_158d0002322539
           min: 0
           max: 100
-
 
   - title: Verandah
     cards:

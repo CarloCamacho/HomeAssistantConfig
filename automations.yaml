@@ -14,6 +14,7 @@
       entity_id: switch.fountain
     service: switch.turn_on
 
+
 - alias: Verandah Lights on at Sun down
   trigger:
     platform: sun
@@ -79,3 +80,18 @@
       entity_id: media_player.living_room_speaker
       data:
         message: 'Sleep tight'
+
+
+- alias: Music Switch
+  trigger:
+    platform: event
+    event_type: click
+    event_data:
+      entity_id: binary_sensor.switch_158d00023d0b83
+      click_type: single
+  action:
+    - service: media_player.select_source
+      data:
+        entity_id: media_player.den
+        source: "Walking On Sunshine"
+        
