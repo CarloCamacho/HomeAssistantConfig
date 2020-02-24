@@ -1,98 +1,94 @@
+# Collect Best PULP Fuel Price
+  - platform: scrape
+    resource: https://www.fuelwatch.wa.gov.au/fuelwatch/fuelWatchRSS?Product=2&Suburb=ellenbrook
+    select: "price"
+    unit_of_measurement: "$"
+    name: Price
+  - platform: scrape
+    resource: https://www.fuelwatch.wa.gov.au/fuelwatch/fuelWatchRSS?Product=2&Suburb=ellenbrook
+    select: "trading-name"
+    name: Station Location
+  - platform: scrape
+    resource: https://www.fuelwatch.wa.gov.au/fuelwatch/fuelWatchRSS?Product=2&Suburb=ellenbrook
+    select: "date"
+    name: Date
+
+# BitCoin Price
+  - platform: coinmarketcap
+    display_currency: AUD
 
 
-## Sonarr TV episode tracking
-  - platform: sonarr
-    host: 192.168.1.150
-    api_key: 53b5b2c7bdc744b8abfd3c7fe332cbd9
-
-## Synology NAS
-  - platform: synologydsm
-    host: 192.168.1.101
-    username: !secret nas_user
-    password: !secret nas_password
-    monitored_conditions:
-      - volume_percentage_used
-
-##Bureu of Meteorology - Millendon / Swan Valley. 
-  - platform: bom
-    station: IDW60901.94795
-    name: Swan Valley
-    monitored_conditions:
-        - apparent_t
-        - gust_kmh
-        - air_temp
-        - rain_trace
-        - rel_hum
-        - wind_dir
-        - wind_spd_kmh
+ 
+# ## Synology NAS
+#   - platform: synologydsm
+#     host: 192.168.1.101
+#     username: !secret nas_user
+#     password: !secret nas_password
+#     monitored_conditions:
+#       - volume_percentage_used
+ 
   
-  ## Sensor Hat for the Pi - primarily for light sensor as temp is a bit close to the hot pi. 
-  - platform: envirophat
-    use_led: false
-    display_options:
-      - temperature
-      - pressure
-      - light
+#   ## Sensor Hat for the Pi - primarily for light sensor as temp is a bit close to the hot pi. 
+#   - platform: envirophat
+#     use_led: false
+#     display_options:
+#       - temperature
+#       - pressure
+#       - light
 
-# Monitor the PI
-  - platform: systemmonitor
-    resources:
-      - type: memory_free
-      - type: memory_use_percent
-      - type: load_1m
-      - type: load_5m
-      - type: load_15m
-      - type: since_last_boot
-      - type: load_15m
+# # Monitor the PI
+#   - platform: systemmonitor
+#     resources:
+#       - type: memory_free
+#       - type: memory_use_percent
+#       - type: load_1m
+#       - type: load_5m
+#       - type: load_15m
+#       - type: since_last_boot
+#       - type: load_15m
 
 
-# Templated Sensors
-  - platform: template
-    sensors:
-      # Power Sensors from the TP-Link HS110 - Lounge
-      tp_link_amps:
-        value_template: '{{ states.switch.lounge_power.attributes["current_a"] | replace(" A", "") | float }}'
-        unit_of_measurement: 'A'
-      tp_link_watts:
-        value_template: '{{ states.switch.lounge_power.attributes["current_power_w"] | replace(" W", "") | float }}'
-        unit_of_measurement: 'W'
-      tp_link_kw:
-        value_template: '{{ states.switch.lounge_power.attributes["total_energy_kwh"] | replace(" kW", "") | float }}'
-        unit_of_measurement: 'kW'
-      tp_link_volts:
-        value_template: '{{ states.switch.lounge_power.attributes["voltage"] | replace(" V", "") | float }}'
-        unit_of_measurement: 'V'
-      # Battery Sensors from Life360
-      life360_ian_battery:
-        value_template: '{{ states.device_tracker.life360_ian_franklin.attributes.battery }}'
-        unit_of_measurement: '%'
-      life360_kelly_battery:
-        value_template: '{{ states.device_tracker.life360_kelly_franklin.attributes.battery }}'
-        unit_of_measurement: '%'
-      # Movement Sensors from Life360
-      life360_ian_driving:
-        value_template: '{{ states.device_tracker.life360_ian_franklin.attributes.driving }}'
-        unit_of_measurement: 'boolean'
-      life360_kelly_driving:
-        value_template: '{{ states.device_tracker.life360_kelly_franklin.attributes.driving }}'
-        unit_of_measurement: 'boolean'
-      # Power Sensors from the TP-Link HS110 - Fountain
-      tp_link_fountain_amps:
-        value_template: '{{ states.switch.fountain.attributes["current_a"] | replace(" A", "") | float }}'
-        unit_of_measurement: 'A'
-      tp_link_fountain_watts:
-        value_template: '{{ states.switch.fountain.attributes["current_power_w"] | replace(" W", "") | float }}'
-        unit_of_measurement: 'W'
-      tp_link_fountain_kw:
-        value_template: '{{ states.switch.fountain.attributes["total_energy_kwh"] | replace(" kW", "") | float }}'
-        unit_of_measurement: 'kW'
-      tp_link_fountain_volts:
-        value_template: '{{ states.switch.fountain.attributes["voltage"] | replace(" V", "") | float }}'
-        unit_of_measurement: 'V'
-      # Calibrated envirophat temp sensor
-      envirophat_calib:
-        value_template: '{{ states.sensor.temperature.state | float - 10 }}'
-        unit_of_measurement: 'C'
+# # Templated Sensors
+#   - platform: template
+#     sensors:
+#       # Power Sensors from the TP-Link HS110 - Lounge
+#       tp_link_amps:
+#         value_template: '{{ states.switch.lounge_power.attributes["current_a"] | replace(" A", "") | float }}'
+#         unit_of_measurement: 'A'
+#       tp_link_watts:
+#         value_template: '{{ states.switch.lounge_power.attributes["current_power_w"] | replace(" W", "") | float }}'
+#         unit_of_measurement: 'W'
+#       tp_link_kw:
+#         value_template: '{{ states.switch.lounge_power.attributes["total_energy_kwh"] | replace(" kW", "") | float }}'
+#         unit_of_measurement: 'kW'
+#       tp_link_volts:
+#         value_template: '{{ states.switch.lounge_power.attributes["voltage"] | replace(" V", "") | float }}'
+#         unit_of_measurement: 'V'
+#       # Battery Sensors from Life360
+#       life360_ian_battery:
+#         value_template: '{{ states.device_tracker.life360_ian_franklin.attributes.battery }}'
+#         unit_of_measurement: '%'
+#       life360_kelly_battery:
+#         value_template: '{{ states.device_tracker.life360_kelly_franklin.attributes.battery }}'
+#         unit_of_measurement: '%'
+ 
+#       # Power Sensors from the TP-Link HS110 - Fountain
+#       tp_link_fountain_amps:
+#         value_template: '{{ states.switch.fountain.attributes["current_a"] | replace(" A", "") | float }}'
+#         unit_of_measurement: 'A'
+#       tp_link_fountain_watts:
+#         value_template: '{{ states.switch.fountain.attributes["current_power_w"] | replace(" W", "") | float }}'
+#         unit_of_measurement: 'W'
+#       tp_link_fountain_kw:
+#         value_template: '{{ states.switch.fountain.attributes["total_energy_kwh"] | replace(" kW", "") | float }}'
+#         unit_of_measurement: 'kW'
+#       tp_link_fountain_volts:
+#         value_template: '{{ states.switch.fountain.attributes["voltage"] | replace(" V", "") | float }}'
+#         unit_of_measurement: 'V'
+#       # Calibrated envirophat temp sensor
+#       envirophat_calib:
+#         value_template: '{{ states.sensor.temperature.state | float - 10 }}'
+#         unit_of_measurement: 'C'
 
   # - platform: influxdb
   #   host: 192.168.1.26
