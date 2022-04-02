@@ -29,6 +29,8 @@ Management of the Pi and Linux backend are done via [Putty](https://www.putty.or
 * __[Shelly 1 Plus - Garage Door Control](https://shelly.cloud/shelly-plus-1)__
 * __[Sonos Music](https://www.sonos.com/en-au/home)__
 * __[Konnected - Home Security](https://konnected.io)__
+* __[AdvantageAir - Air Conditioning Control](https://www.advantageair.com.au/myplace)__
+* __[Tuya Lightbulbs - Lamps](https://www.tuya.com)__
 * __[Broadlink RM Mini 3](https://www.amazon.com/BroadLink-Control-Universal-Remote-RMMINI3-EN/dp/B01FK2SDOC/ref=sr_1_2?ie=UTF8&qid=1499475366&sr=8-2&keywords=broadlink+mini3)__
 * __[Google Home - Voice Control](https://store.google.com/au/product/google_home_mini)__
 * __[ChromeCast Audio](https://store.google.com/us/product/chromecast_audio)__
@@ -51,3 +53,5 @@ Management of the Pi and Linux backend are done via [Putty](https://www.putty.or
 
    
 ## What's Next
+- New Lovelace interface - I've got a very basic one in place now that is easy to use from Mobile 
+
