@@ -8,10 +8,7 @@
 These are the [Home Assistant](https://home-assistant.io/) configuration files used in my Home Assistant (HA) setup. 
 I'm new to the home automation game and have found hopefully this repository will help someone else who is getting started. 
 
-HomeAssistant is currently running on a Raspberry PI 4 in Docker with a SQL backend, and telemetry storage via [InfluxDB](https://www.influxdata.com/time-series-platform/influxdb/), infrastructure data gathered by [Telegraf](https://www.influxdata.com/time-series-platform/telegraf), visualisation with [Grafana](https://grafana.com/), and various tasks that I prefer to run under linux. Eg. Docker, Crontab 
-
-A fantastic resource for combing all of the above products is Phil Hawthorne's blog: https://philhawthorne.com/getting-started-with-grafana-influxdb-for-home-assistant/
-He also has a great Docker image for InfluxDB & Grafana that greatly simplifies the setup process:  https://github.com/philhawthorne
+HomeAssistant is currently running on a Raspberry PI 4 in Docker, with a local instance of Zigbee2Mqtt handling the Zigbee devices. 
 
 # Editing the Configuration Files:
 I edit the majority of the HA configuration files via Samba share on a Windows 10 workstation using [Visual Studio Code](https://code.visualstudio.com/).
@@ -21,37 +18,48 @@ Management of the Pi and Linux backend are done via [Putty](https://www.putty.or
 
 ## Cloud Resources:
 * __[Australian Bureau of Meteorology](http://www.bom.gov.au)__
-* __[SpeedTest-cli](https://github.com/sivel/speedtest-cli)__
 * __[Teslafi - Vehicle Stats & Tracking](https://www.teslafi.com)__
+* __[PV Output - Solar performance tracking](https://pvoutput.org/)__
+
 
 ## Wifi Connected Devices
 * __[LIFX Lights](https://www.lifx.com.au/)__ 
 * __[Shelly 1 Plus - Garage Door Control](https://shelly.cloud/shelly-plus-1)__
 * __[Sonos Music](https://www.sonos.com/en-au/home)__
 * __[Konnected - Home Security](https://konnected.io)__
-* __[AdvantageAir - Air Conditioning Control](https://www.advantageair.com.au/myplace)__
 * __[Tuya Lightbulbs - Lamps](https://www.tuya.com)__
-* __[Broadlink RM Mini 3](https://www.amazon.com/BroadLink-Control-Universal-Remote-RMMINI3-EN/dp/B01FK2SDOC/ref=sr_1_2?ie=UTF8&qid=1499475366&sr=8-2&keywords=broadlink+mini3)__
 * __[Google Home - Voice Control](https://store.google.com/au/product/google_home_mini)__
 * __[ChromeCast Audio](https://store.google.com/us/product/chromecast_audio)__
 * __[TP-Link HS110 Power Switch](https://www.tp-link.com/au/products/details/cat-5258_HS110.html)__
-
+* __[Xiaomi Smart WiFi Socket](https://xiaomipedia.com/en/p/mijia-smart-wifi-socket-2/)__
 
 ## Zigbee Devices
 * __[Slaesh CC2652RB Stick w/ Zigbee2Mqtt](https://slae.sh/projects/cc2652)__
 * __[Xiaomi Smart Bluetooth Switch](https://www.gearbest.com/smart-light-bulb/pp_257679.html)__
 * __[Xiaomi Temperature and Humidity Sensor](https://www.gearbest.com/access-control/pp_626702.html)__
+* __[Philips Hue Dimmer Switch](https://www.philips-hue.com/en-us/p/hue-dimmer-switch--latest-model-/046677562779)__
 
-## Hardwired Devices
+## Hardwired Devices and Services
 * __[Cisco SG300-28p Switch](https://www.cisco.com/c/en/us/support/switches/sg300-28pp-28-port-gigabit-poe-plus-managed-switch/model.html)__
 * __[Synology DS412+ ](https://www.synology.com/en-us/support/download/DS412+#utilities)__
-* __[Mikrotik hEX Router ](https://mikrotik.com/product/RB750Gr3)__ 
-* __[Mikrotik hAP ac lite Wireless AP](https://mikrotik.com/product/RB952Ui-5ac2nD)__
+* __[pfSense Router w/ pfBLockerNG](https://www.pfsense.org/)__
 * __[Vivotek PD8136 Pan/Tilt Dome Cameras ](https://www.vivotek.com/website/pd8136/)__
-* __[Enviro PHAT Sensors](https://shop.pimoroni.com/products/enviro-phat)__
-* __[Pi-Hole](https://pi-hole.net/)__
+* __[TP-Link Tapo C100 Camera ](https://www.tapo.com/au/product/smart-camera/tapo-c100/)__
+* __[TP-Link Tapo C200 Pan/Tilt Dome ](https://www.tapo.com/au/product/smart-camera/tapo-c200/)__
+* __[Fronius Symo 8.2-3-M](https://www.solargain.com.au/solar-inverters/fronius/fronius-symo)__
+* __[Frigate NVR](https://frigate.video/)__
+* __[AdvantageAir - Air Conditioning Control](https://www.advantageair.com.au/myplace)__
+* __[Hydrwise Reticulation](https://www.hydrawise.com/)__
 
-   
-## What's Next
-- New Lovelace interface - I've got a very basic one in place now that is easy to use from Mobile 
 
+
+
+## What's New
+- New Lovelace interface -  
+I'm in a fairly good place with the interface right now. It works well both on in a browser and on phones, and so far the wife has been fine interacting with it.
+I've recently integrated the Frigate NVR video feeds and have found it to work really well. 
+I've also just added a bit of logic around the kettle to highlight whether its ready to be turned on or not - essentially before going to be I make sure its filled and then turn it off at the wall/smartplug. 
+This is detected by home assistant and flags that the kettle is ready. In a groggy state in the morning, we can see if the kettle is ready and turn it on from our phones.
+Of course we could also set a timer and have it ready, but i've its better to do it on demand as its a fairly basic kettle with no "keep warm" type functions, so if it boils and we don't use it, we'll have to run it again manually anyways. 
+
+<img src="https://github.com/CarloCamacho/HomeAssistantConfig/blob/master/Stock%20Photos/lovelace.JPG">
